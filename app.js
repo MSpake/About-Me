@@ -8,30 +8,12 @@ var yes_answers = ['yes', 'y', 'sure', 'absolutely', 'ok'];
 //no_answers is an array containing various forms of no
 var no_answers = ['no', 'n', 'nope', 'absolutely not', 'nah'];
 
-//declare variable play_game
-var play_game;
-
-//play_game is assigned the returned value of the prompt
-play_game = prompt('Hello visitor, let\'s play a game. You do want to play a game with me, don\'t you?').toLowerCase();
-
-//print play_game to console
-console.log('Does the user want to play? ' + play_game);
-
-//check if the value stored in play_game is present in the yes_answers array or the no_answers array
-//prints a different message to the user depending on which array (or neither) includes the value stored in play_game
-if (yes_answers.includes(play_game)) {
-    alert('Oh good! This will be fun!');
-} else if (no_answers.includes(play_game)) {
-    alert('Oh dear, that will never do. How about this. If you can correctly guess some facts about me, you don\'t have to play a game with me.');
-} else {
-    alert('Hmmm. I\'m just going to take that as a yes.');
-}
 
 //declare variable lives_in_seattle
 var lives_in_seattle;
 
 //lives_in_seattle is assigned the returned value of the prompt
-lives_in_seattle = prompt('I\'ll start easy. Do I live in Seattle?').toLowerCase();
+lives_in_seattle = prompt('Hello visitor, let\'s play a guessing game! I\'ll start easy. Do I live in Seattle?').toLowerCase();
 
 //print lives_in_seattle to the console
 console.log('Does the user think I live in seattle? ' + lives_in_seattle);
@@ -80,6 +62,23 @@ if (yes_answers.includes(drinks_coffee)) {
     alert('I\'m not sure how to interpret your guess. But the answer is no, I much perfer tea to coffee.');
 }
 
+//declare variable likes_to_read
+var likes_to_read;
+
+//likes_to_read is assigned the returned value of the prompt
+likes_to_read = prompt('Do I like to read? ').toLowerCase();
+
+//prints likes_to_read to the console
+console.log('Does the user think I like to read? ' + likes_to_read);
+
+if (yes_answers.includes(likes_to_read)) {
+    alert('Heck yeah I do!');
+} else if (no_answers.includes(likes_to_read)) {
+    alert('Incorrect. I love reading.');
+} else {
+    alert('I\'m not sure how to interpret your guess. But I love reading.');
+}
+
 //declare variable drives_a_car
 var drives_a_car;
 
@@ -96,6 +95,7 @@ if (yes_answers.includes(drives_a_car)) {
 } else {
     alert('I\'m not sure how to interpret your guess. But the answer is no, it\'s just me, my feet, and a bus pass. (though sometimes I\'ll catch a ride with a friend.)');
 }
+
 
 /*
 //section framework
