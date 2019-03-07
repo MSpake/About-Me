@@ -1,3 +1,5 @@
+/* css to creatively and tastefully lay out the page */
+
 h1 {
     font-size: 40px;
     color: rgb(255, 255, 255);
@@ -19,7 +21,7 @@ body {
     background-color: black;
 }
 
-p {
+ul {
     width: 90%;
     float: center;
     margin-left: auto;
