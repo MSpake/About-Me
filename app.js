@@ -20,7 +20,7 @@ name = prompt('Hello visitor, welcome to my site. What\'s your name?');
 //stretch goal version of the first five questions, using arrays
 
 //print a welcome mesaage to the user
-alert('Welcome ' + name + ', let\'s play a guessing game!').toLowerCase();
+alert('Welcome ' + name + ', let\'s play a guessing game!');
 
 //declare variable questions that is a multidimensional array
 //each element array holds: the text of the question, the correct answer, an empty string (to hold user'd guess), and a response
@@ -44,28 +44,31 @@ for (var i = 0; i < questions.length; i++) {
 
   //check if their answer a yes, a no, or something else
   //assign it a coresponding value
-  if (yes_answers.includes(questions[i][2])) {
-    questions[i][2] = 'yes';
-  } else if (no_answers.includes(questions[i][2])) {
-    questions[i][2] = 'no';
+  var check_yes_no = function (user_guess) {
+  if (yes_answers.includes(user_guess)) {
+    user_guess = 'yes';
+  } else if (no_answers.includes(user_guess)) {
+    user_guess = 'no';
   } else {
-    questions[i][2] = 'unclear';
+    user_guess = 'unclear';
   }
 
   //check if their answer matches the correct answer
   //print a different message to the user and the console based on correct, not correct, unclear guesses
-  if (questions[i][2] === questions[i][1]) {
+  if (user_guess === questions[i][1]) {
     alert('Correct! ' + questions[i][3]);
     console.log('They guessed correctly.');
     //increment total_correct_guesses
     total_correct_guesses++;
-  } else if (questions[i][2] === 'unclear') {
+  } else if (user_guess === 'unclear') {
     alert('I\'m not sure how to interpret your guess. But the answer is ' + questions[i][1] + '. ' + questions[i][3]);
     console.log('Answer unclear');
   } else {
     alert('I\'m sorry, that\'s incorrect. ' + questions[i][3]);
     console.log('They guessed incorrectly.');
   }
+  }
+check_yes_no(questions[i][2]);
 
   //print total_correct_guesses to the console
   console.log(total_correct_guesses);
@@ -98,6 +101,8 @@ console.log(random_number);
 //looking for too high, too low, or correct
 //limit of 4 guesses
 //prints a different message to the user if guess too high, too low, or correct
+
+var number_based_question = function () {
 do {
   number_guessed = prompt('I\'m thinking of a number between 1 and 10. Can you guess which one? ' + guesses_left + '.');
 
@@ -136,7 +141,8 @@ do {
   console.log('Guesses left: ' + (4 - guess));
 
 } while (guess < 4 && got_it === false);
-
+}
+number_based_question();
 
 
 
@@ -160,6 +166,8 @@ var guesses_remaining = 'I\'ll give you 6 guesses';
 //answer is assigned the returned value of the prompt and compared to the elemnts in the hobbies array
 //limit 6 guesses
 //print a different message to the user depending on if answer is included or not
+
+var multi_answer_question = function () {
 do {
   answer = prompt('Can you guess one of my hobbies? ' + guesses_remaining + '.').toLowerCase();
 
@@ -195,6 +203,8 @@ do {
 
 
 } while (attempts < 6 && found_one === false);
+}
+multi_answer_question();
 
 //define variable hobbies_list and assign it a string value that is a list of all the elements in the hobbies array
 //syntax found on Stack Overflow (https://stackoverflow.com/questions/13939573/how-to-add-spaces-between-array-items-javascript)
