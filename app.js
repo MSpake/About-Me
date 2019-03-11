@@ -44,31 +44,31 @@ for (var i = 0; i < questions.length; i++) {
 
   //check if their answer a yes, a no, or something else
   //assign it a coresponding value
-  var check_yes_no = function (user_guess) {
-  if (yes_answers.includes(user_guess)) {
-    user_guess = 'yes';
-  } else if (no_answers.includes(user_guess)) {
-    user_guess = 'no';
-  } else {
-    user_guess = 'unclear';
-  }
+  var check_yes_no = function(user_guess) {
+    if (yes_answers.includes(user_guess)) {
+      user_guess = 'yes';
+    } else if (no_answers.includes(user_guess)) {
+      user_guess = 'no';
+    } else {
+      user_guess = 'unclear';
+    }
 
-  //check if their answer matches the correct answer
-  //print a different message to the user and the console based on correct, not correct, unclear guesses
-  if (user_guess === questions[i][1]) {
-    alert('Correct! ' + questions[i][3]);
-    console.log('They guessed correctly.');
-    //increment total_correct_guesses
-    total_correct_guesses++;
-  } else if (user_guess === 'unclear') {
-    alert('I\'m not sure how to interpret your guess. But the answer is ' + questions[i][1] + '. ' + questions[i][3]);
-    console.log('Answer unclear');
-  } else {
-    alert('I\'m sorry, that\'s incorrect. ' + questions[i][3]);
-    console.log('They guessed incorrectly.');
-  }
-  }
-check_yes_no(questions[i][2]);
+    //check if their answer matches the correct answer
+    //print a different message to the user and the console based on correct, not correct, unclear guesses
+    if (user_guess === questions[i][1]) {
+      alert('Correct! ' + questions[i][3]);
+      console.log('They guessed correctly.');
+      //increment total_correct_guesses
+      total_correct_guesses++;
+    } else if (user_guess === 'unclear') {
+      alert('I\'m not sure how to interpret your guess. But the answer is ' + questions[i][1] + '. ' + questions[i][3]);
+      console.log('Answer unclear');
+    } else {
+      alert('I\'m sorry, that\'s incorrect. ' + questions[i][3]);
+      console.log('They guessed incorrectly.');
+    }
+  };
+  check_yes_no(questions[i][2]);
 
   //print total_correct_guesses to the console
   console.log(total_correct_guesses);
@@ -102,46 +102,46 @@ console.log(random_number);
 //limit of 4 guesses
 //prints a different message to the user if guess too high, too low, or correct
 
-var number_based_question = function () {
-do {
-  number_guessed = prompt('I\'m thinking of a number between 1 and 10. Can you guess which one? ' + guesses_left + '.');
+var number_based_question = function() {
+  do {
+    number_guessed = prompt('I\'m thinking of a number between 1 and 10. Can you guess which one? ' + guesses_left + '.');
 
-  //prints number_guessed to the console
-  console.log('User guessed: ' + number_guessed);
+    //prints number_guessed to the console
+    console.log('User guessed: ' + number_guessed);
 
-  //compares value stored in guess to value stored in random_number
-  //tells the user if their guess is too high or too low
-  //prints a message to the user depending on what they guessed
-  //prints too high, too low, or correct to the console
-  if (number_guessed > random_number) {
-    alert('Too high!');
-    console.log('Guess was too high');
-  } else if (number_guessed < random_number) {
-    alert('Too low!');
-    console.log('Guess was too low');
-  } else if (number_guessed == random_number) {
-    alert('Correct! I was thinking ' + random_number);
-    console.log('They are correct');
-    //assigns a value of true to variable got_it if the user guesses correctly
-    got_it = true;
-    //increments total correct guesses
-    total_correct_guesses++;
-  } else {
-    alert('Not sure how to interpret that.');
-  }
+    //compares value stored in guess to value stored in random_number
+    //tells the user if their guess is too high or too low
+    //prints a message to the user depending on what they guessed
+    //prints too high, too low, or correct to the console
+    if (number_guessed > random_number) {
+      alert('Too high!');
+      console.log('Guess was too high');
+    } else if (number_guessed < random_number) {
+      alert('Too low!');
+      console.log('Guess was too low');
+    } else if (number_guessed == random_number) {
+      alert('Correct! I was thinking ' + random_number);
+      console.log('They are correct');
+      //assigns a value of true to variable got_it if the user guesses correctly
+      got_it = true;
+      //increments total correct guesses
+      total_correct_guesses++;
+    } else {
+      alert('Not sure how to interpret that.');
+    }
 
-  //sets the limit to the number of guesses to 4
-  if (guess === 3 && got_it === false) {
-    alert('I\'m sorry, you\'ve run out of guesses. I was thinking of ' + random_number);
-  }
-  //increments guess
-  //print remaining guesses message to user and to console
-  guess++;
-  guesses_left = ('You have ' + (4 - guess) + ' guesses left');
-  console.log('Guesses left: ' + (4 - guess));
+    //sets the limit to the number of guesses to 4
+    if (guess === 3 && got_it === false) {
+      alert('I\'m sorry, you\'ve run out of guesses. I was thinking of ' + random_number);
+    }
+    //increments guess
+    //print remaining guesses message to user and to console
+    guess++;
+    guesses_left = ('You have ' + (4 - guess) + ' guesses left');
+    console.log('Guesses left: ' + (4 - guess));
 
-} while (guess < 4 && got_it === false);
-}
+  } while (guess < 4 && got_it === false);
+};
 number_based_question();
 
 
@@ -167,43 +167,43 @@ var guesses_remaining = 'I\'ll give you 6 guesses';
 //limit 6 guesses
 //print a different message to the user depending on if answer is included or not
 
-var multi_answer_question = function () {
-do {
-  answer = prompt('Can you guess one of my hobbies? ' + guesses_remaining + '.').toLowerCase();
+var multi_answer_question = function() {
+  do {
+    answer = prompt('Can you guess one of my hobbies? ' + guesses_remaining + '.').toLowerCase();
 
-  //prints answer to the console
-  console.log(answer);
+    //prints answer to the console
+    console.log(answer);
 
-  //check if the hobbies array includes an element with the same value as answer
-  //tells the user if they got it right or not
-  //prints correct or not correct to the console
-  if (hobbies.includes(answer)) {
-    alert('Well done!');
-    console.log('A correct guess');
-    //found_one is assigned a value of true
-    found_one = true;
-    //increments total correct guesses
-    total_correct_guesses++;
-  } else {
-    alert('Nope. (Well...it\'s not one I listed here anyway...)');
-    console.log('Inncorrect (probably) guess');
-  }
+    //check if the hobbies array includes an element with the same value as answer
+    //tells the user if they got it right or not
+    //prints correct or not correct to the console
+    if (hobbies.includes(answer)) {
+      alert('Well done!');
+      console.log('A correct guess');
+      //found_one is assigned a value of true
+      found_one = true;
+      //increments total correct guesses
+      total_correct_guesses++;
+    } else {
+      alert('Nope. (Well...it\'s not one I listed here anyway...)');
+      console.log('Inncorrect (probably) guess');
+    }
 
-  //sets the limit to the number of guesses to 6
-  if (attempts === 5 && found_one === false) {
-    alert('I\'m sorry, you\'ve run out of guesses.');
-  }
+    //sets the limit to the number of guesses to 6
+    if (attempts === 5 && found_one === false) {
+      alert('I\'m sorry, you\'ve run out of guesses.');
+    }
 
-  //increments attempts
-  attempts++;
+    //increments attempts
+    attempts++;
 
-  //prints remaing guesses messsage to user and console
-  guesses_remaining = ('You have ' + (6 - attempts) + ' guesses left');
-  console.log('Guesses left: ' + (6 - attempts));
+    //prints remaing guesses messsage to user and console
+    guesses_remaining = ('You have ' + (6 - attempts) + ' guesses left');
+    console.log('Guesses left: ' + (6 - attempts));
 
 
-} while (attempts < 6 && found_one === false);
-}
+  } while (attempts < 6 && found_one === false);
+};
 multi_answer_question();
 
 //define variable hobbies_list and assign it a string value that is a list of all the elements in the hobbies array

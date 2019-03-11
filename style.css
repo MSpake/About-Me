@@ -1,5 +1,3 @@
-/* css to creatively and tastefully lay out the page */
-
 h1 {
     font-size: 40px;
     color: rgb(255, 255, 255);
@@ -21,13 +19,37 @@ body {
     background-color: black;
 }
 
+.image-holder {
+    display: inline-block;
+}
+
+.list-image {
+    height: 400px;
+    display: inline-block;
+}
+
+figure {
+    text-align: center;
+}
+
 ul {
+    list-style-type: none;
     width: 90%;
-    float: center;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+ol {
+    list-style-position: inside;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
 }
 
 footer {
